@@ -1,0 +1,9 @@
+C:\Extensions\Extensions.BR\bin\Debug\netstandard2.0\Extensions.BR.deps.json
+C:\Extensions\Extensions.BR\bin\Debug\netstandard2.0\Extensions.BR.dll
+C:\Extensions\Extensions.BR\bin\Debug\netstandard2.0\Extensions.BR.pdb
+C:\Extensions\Extensions.BR\obj\Debug\netstandard2.0\Extensions.BR.csprojAssemblyReference.cache
+C:\Extensions\Extensions.BR\obj\Debug\netstandard2.0\Extensions.BR.csproj.CoreCompileInputs.cache
+C:\Extensions\Extensions.BR\obj\Debug\netstandard2.0\Extensions.BR.AssemblyInfoInputs.cache
+C:\Extensions\Extensions.BR\obj\Debug\netstandard2.0\Extensions.BR.AssemblyInfo.cs
+C:\Extensions\Extensions.BR\obj\Debug\netstandard2.0\Extensions.BR.dll
+C:\Extensions\Extensions.BR\obj\Debug\netstandard2.0\Extensions.BR.pdb
