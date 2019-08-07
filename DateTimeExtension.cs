@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExtratoMedico.Helper.Extensions
+namespace Extensions.BR
 {
     public static class DateTimeExtension
     {

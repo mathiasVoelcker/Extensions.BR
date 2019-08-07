@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Extensions.MV;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -11,11 +12,16 @@ namespace Extensions.BR
     {
         private static string[] PREPOSICOES = new string[] { "e", "de", "da", "das", "do", "dos", "com", "na", "nas", "no", "nos" };
 
-        private static string[] SIGLAS = new string[] { "POA" };
+        private static string comAcentos = "ÄÅÁÂÀÃäáâàãÉÊËÈéêëèÍÎÏÌíîïìÖÓÔÒÕöóôòõÜÚÛüúûùÇç";
+        private static string semAcentos = "AAAAAAaaaaaEEEEeeeeIIIIiiiiOOOOOoooooUUUuuuuCc";
 
         public static string RemoverAcentos(this string text)
         {
-            return new string(text.Normalize(NormalizationForm.FormD).Where(c => c < 128).ToArray());
+            for (int i = 0; i < comAcentos.Length; i++)
+            {
+                text = text.Replace(comAcentos[i].ToString(), semAcentos[i].ToString());
+            }
+            return text;
         }
 
         /// <summary>
@@ -78,5 +84,22 @@ namespace Extensions.BR
 
             return cpf.EndsWith(Digito);
         }
+
+        public static string CapitalizarFrase(this string text, List<string> wordsLowerCase = null, List<string> wordsUpperCase = null)
+        {
+            if (wordsLowerCase == null)
+                wordsLowerCase = PREPOSICOES.ToList();
+            else
+            {
+                wordsLowerCase.AddRange(PREPOSICOES);
+            }
+            return text.CapitalizeSentence(wordsLowerCase: wordsLowerCase.ToArray());
+        }
+
+        public static bool ContainsCaseIgnored(this string[] textList, string value)
+        {
+            return textList.Any(x => x.ToUpper() == value.ToUpper());
+        }
+
     }
 }

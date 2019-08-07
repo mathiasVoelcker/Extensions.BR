@@ -1,7 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net40;net45</TargetFrameworks>
+    <Version>1.0.2</Version>
+    <Authors>Mathias Voelcker</Authors>
+    <Company>mvoelcker</Company>
+    <PackageId>Extensions.MV.BR</PackageId>
+    <Product>Extensions.MV.BR</Product>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extensions.MV" Version="1.0.1" />
+  </ItemGroup>
 
 </Project>
