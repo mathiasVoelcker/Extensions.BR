@@ -85,20 +85,18 @@ namespace Extensions.BR
             return cpf.EndsWith(Digito);
         }
 
-        public static string CapitalizarFrase(this string text, List<string> wordsLowerCase = null, List<string> wordsUpperCase = null)
+        public static string CapitalizarFrase(this string text, string[] wordsLowerCase = null, string[] wordsUpperCase = null)
         {
+            if (text.IsNullOrEmpty()) return text;
             if (wordsLowerCase == null)
-                wordsLowerCase = PREPOSICOES.ToList();
+                wordsLowerCase = PREPOSICOES;
             else
             {
-                wordsLowerCase.AddRange(PREPOSICOES);
+                var wordsLowerCaseList = wordsLowerCase.ToList();
+                wordsLowerCaseList.AddRange(PREPOSICOES);
+                wordsLowerCase = wordsLowerCaseList.ToArray();
             }
-            return text.CapitalizeSentence(wordsLowerCase: wordsLowerCase.ToArray());
-        }
-
-        public static bool ContainsCaseIgnored(this string[] textList, string value)
-        {
-            return textList.Any(x => x.ToUpper() == value.ToUpper());
+            return text.CapitalizeSentence(wordsLowerCase: wordsLowerCase, wordsUpperCase: wordsUpperCase);
         }
 
     }

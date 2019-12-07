@@ -15,8 +15,12 @@ namespace Extensions.BR
         /// <returns></returns>
         public static string ValorMonetario(this decimal valor)
         {
-            var valorFormatado = string.Format("{0:#,0.00}", valor);
-            return $"R$ {valorFormatado}";
+            string valorFormatado = "";
+            if (valor < 0) 
+                valorFormatado = string.Format("(R$ {0:#,0.00})", valor * -1);
+            else
+                valorFormatado = string.Format("R$ {0:#,0.00}", valor);
+            return valorFormatado;
         }
     }
 }
